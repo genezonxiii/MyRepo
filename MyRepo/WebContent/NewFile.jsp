@@ -10,11 +10,26 @@
 </head>
 <body>
 	<div class="div1">
+		<ul></ul>
 	</div>
-	<button id="btn1"></button>
+	<button id="btn1">test</button>
 <script type="text/javascript">
 	$("#btn1").click(function(e) {
-		$("div1").html("123");
+		e.preventDefault();
+		
+// 		$(".div1 ul").append('<li><a href="/user/messages"><span class="tab">Message Center</span></a></li>');
+		
+		$('.div1 ul').append(
+		    $('<li>').append(
+		        $('<a>')
+		        .attr('href','/user/messages')
+		        .append(
+		            $('<span>')
+		            	.attr('class', 'tab')
+	            		.append("Message center")
+				)
+			)
+		); 
 	});
 </script>
 </body>
